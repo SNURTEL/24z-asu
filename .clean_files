@@ -1,0 +1,9 @@
+{
+    "desired_attrs": 644,
+    "illegal_chars": ":\".;*?$#'|\\",
+    "subst_char": "_",
+    "tmp_extensions": [
+        ".tmp",
+        "~"
+    ]
+}
