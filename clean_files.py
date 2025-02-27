@@ -9,8 +9,6 @@ import shutil
 from pathlib import Path
 from typing import List, Callable, Optional
 
-from pprint import pprint
-
 
 NO_INTERACTION = False
 
@@ -18,7 +16,6 @@ NO_INTERACTION = False
 def get_decision_factory(msg_fstring: str) -> Callable[[Path], bool]:
     global NO_INTERACTION
     if NO_INTERACTION:
-
         def get_decision(*args, **kwargs):
             return True
 
@@ -219,7 +216,6 @@ def _copy_all_to_x(x: Path, y: List[Path]):
 
         common_subdirs = {**common_subdirs, **{f / Path(d): (df, ydir) for d, df in diff.subdirs.items()}}
 
-    pprint(files_to_copy)
     for ydir, file in files_to_copy:
         new_file = x / file
         if get_decision(ydir / file, [new_file]):
@@ -239,8 +235,8 @@ def main():
     with open(args.config.expanduser(), mode="r", encoding="utf-8") as fp:
         config = json.load(fp)
 
-    if (
-        not config.get("desired_attrs")
+    if not (
+        config.get("desired_attrs")
         and config.get("illegal_chars")
         and config.get("subst_char")
         and config.get("tmp_extensions")
