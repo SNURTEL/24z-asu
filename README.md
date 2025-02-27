@@ -2,8 +2,6 @@
 
 Skrypt do porządkowania plików w katalogach.
 
-Tomasz Owienko 318703, realizacja ASU 24Z, grupa czwartek 12:15
-
 ### Uruchomienie
 
 Uruchomienie skryptu:
